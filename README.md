@@ -1,7 +1,7 @@
 Terminal Games
 ==============
 
-Small little games to play in the terminal. The games are build for fun little side projects,
+Small games to play in the terminal. The games are build for fun little side projects,
 don't expect compatiblety or settings and options or save games.
 
 # Requirements
