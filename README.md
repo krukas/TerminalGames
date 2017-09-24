@@ -17,9 +17,13 @@ Clone the repository or download the game file, run script directly or call it b
 
 The old simple Snake game, you have 3 lives to get the highest score. You control the snake by the arrow keys or with hjkl.
 
+![Snake screenshot](screenshots/snake.png?raw=true "Snake")
+
 ## Color Wars
 
 Game where you play against the computer to get the most colored tiles. You conquer a tile by picking a color that is adjacent to your current tiles.
+
+![Color wars screenshot](screenshots/color-wars.png?raw=true "Color Wars")
 
 # Contribution
 
