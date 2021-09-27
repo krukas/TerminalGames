@@ -34,7 +34,6 @@ Game where you play against the computer to get the most colored tiles. You conq
 * Get to 100 points in total to win
 ![](/screenshots/game_startup.png)
 
-![](/screenshots/gameplay.png)
 
 # Contribution
 
