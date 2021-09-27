@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """A dice game modeled after the traditional game Pig"""
 import time
 import random
@@ -74,44 +76,79 @@ class AIPlayer(Player):
     """AI Class for the game, inherits Player class"""
     def __init__(self):
         super().__init__('Sup_Bot', 42)
+        self._firstroll = 0
     def will_roll(self):
         time.sleep(2)
         print('Would you like to start to roll or continue rolling?')
         print('Please enter "y" for yes or "n" for hold your turn.')
-        random_choice = random.randint(1, 10)
-        if 1 <= random_choice <= 3:
-            if self._tempscore <= 3:
-                print(">y")
-                print()
-                time.sleep(1)
-                self._number_rolls += 1
-                self.dice_roll()
-            elif self._tempscore >= 3 and self._number_rolls > 0:
-                print(">n")
-                print()
-                time.sleep(1)
-                print(self._name + " holding their turn....")
-                self._score += self._tempscore
-                self._tempscore = 0
-                self._number_rolls = 0
-                print("Total score: ", self._score)
-        elif random_choice == 10:
-            if self._tempscore <= 30:
-                print(">y")
-                print()
-                time.sleep(1)
-                self._number_rolls += 1
-                self.dice_roll()
-            elif self._tempscore >= 30 and self._number_rolls > 0:
-                print(">n")
-                print()
-                time.sleep(1)
-                print(self._name + " holding their turn....")
-                self._score += self._tempscore
-                self._tempscore = 0
-                self._number_rolls = 0
-                print("Total score: ", self._score)
-
+        if self._firstroll == 0:
+            print(">y")
+            print()
+            time.sleep(1)
+            self._number_rolls += 1
+            self._firstroll = 1
+            self.dice_roll()
+        else:
+            random_choice = random.randint(1, 10)
+            if 1 <= random_choice <= 5:
+                if self._tempscore <= 3:
+                    print(">y")
+                    print()
+                    time.sleep(1)
+                    self._number_rolls += 1
+                    self.dice_roll()
+                elif self._tempscore >= 3 and self._number_rolls > 0:
+                    print(">n")
+                    print()
+                    time.sleep(1)
+                    print(self._name + " holding their turn....")
+                    self._score += self._tempscore
+                    self._tempscore = 0
+                    self._number_rolls = 0
+                    print("Total score: ", self._score)
+                    self._firstroll = 0
+            elif 6 <= random_choice <= 10:
+                if self._tempscore <= 30:
+                    print(">y")
+                    print()
+                    time.sleep(1)
+                    self._number_rolls += 1
+                    self.dice_roll()
+                elif self._tempscore >= 30 and self._number_rolls > 0:
+                    print(">n")
+                    print()
+                    time.sleep(1)
+                    print(self._name + " holding their turn....")
+                    self._score += self._tempscore
+                    self._tempscore = 0
+                    self._number_rolls = 0
+                    print("Total score: ", self._score)
+                    self._firstroll = 0
+    def dice_roll(self):
+        """Presents the amount before you roll your dice and also rolls the dice"""
+        answer = 0
+        print("************************")
+        print("Total Score: ", self._score)
+        print("Turn Score: ", self._tempscore)
+        print("Times Rolled: ", self._number_rolls)
+        print()
+        time.sleep(.5)
+        print("Rolling the dices...")
+        answer = random.randint(1, 6)
+        print("The values is ", answer)
+        print()
+        self._number_rolls += 1
+        if answer == 1:
+            print("Your score will be emptied, turn ends")
+            print("Total score: ", self._score)
+            time.sleep(2)
+            self._firstroll = 0
+            self._tempscore = 0
+            self._number_rolls = 0
+            print()
+        else:
+            self._tempscore += answer
+            self.will_roll()
 class PlayerQueue:
     """Player Queue for the Rounds"""
     def __init__(self, player_list):
