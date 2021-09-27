@@ -32,6 +32,9 @@ Game where you play against the computer to get the most colored tiles. You conq
 * If you roll a 1 you get nothing added to your score and your turn ends
 * If you roll 2-6 it will be added to the turn score which can be added to your score if you choose to put your turn on hold
 * Get to 100 points in total to win
+![](/image/game_startup.png)
+
+![](/image/gameplay.png)
 
 # Contribution
 
