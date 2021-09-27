@@ -125,7 +125,7 @@ class AIPlayer(Player):
                     print("Total score: ", self._score)
                     self._firstroll = 0
     def dice_roll(self):
-        """Presents the amount before you roll your dice and also rolls the dice"""
+        """Presents the amount before you roll your dice and also rolls the dice for the AI"""
         answer = 0
         print("************************")
         print("Total Score: ", self._score)
