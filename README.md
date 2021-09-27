@@ -25,6 +25,14 @@ Game where you play against the computer to get the most colored tiles. You conq
 
 ![Color wars screenshot](screenshots/color-wars.png?raw=true "Color Wars")
 
+## Pig Dice Game
+* 2-4 players
+* Rolls form highest to greatest for the order of playing (precalculates before game starts)
+* You can either decide on your turn to keep rolling or to cash in the points you earned during your turn to your score
+* If you roll a 1 you get nothing added to your score and your turn ends
+* If you roll 2-6 it will be added to the turn score which can be added to your score if you choose to put your turn on hold
+* Get to 100 points in total to win
+
 # Contribution
 
 Contribution is always welcome, just create a pull request.
